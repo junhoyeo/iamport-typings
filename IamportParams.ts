@@ -1,4 +1,4 @@
-export interface IamportAdditionalData {
+export interface IamportAdditionalParams {
   digital?: boolean;
   vbank_due?: string;
   m_redirect_url?: string;
@@ -10,7 +10,7 @@ export interface IamportDisplay {
   card_quota?: number[];
 }
 
-export default interface IamportData extends IamportAdditionalData {
+export default interface IamportParams extends IamportAdditionalParams {
   pg?: string;
   pay_method?: string;
   escrow?: boolean;

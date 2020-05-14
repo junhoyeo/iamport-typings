@@ -15,7 +15,7 @@
   },
   "files": [
     "index.d.ts",
-    "IamportData.ts",
+    "IamportParams.ts",
     "IamportResponse.ts"
   ]
 }
