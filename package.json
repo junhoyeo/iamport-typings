@@ -1,0 +1,10 @@
+{
+  "name": "iamport-typings",
+  "version": "1.0.0",
+  "description": "TypeScript type definitions for iamport",
+  "main": "index.d.js",
+  "types": "index.d.js",
+  "repository": "https://github.com/junhoyeo/iamport-typings",
+  "author": "JunhoYeo <hanaro0704@gmail.com>",
+  "license": "MIT"
+}
