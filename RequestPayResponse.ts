@@ -1,4 +1,4 @@
-export interface IamportAdditionalResponse {
+export interface RequestPayAdditionalResponse {
   apply_num?: string;
   vbank_num?: string;
   vbank_name?: string;
@@ -6,7 +6,7 @@ export interface IamportAdditionalResponse {
   vbank_date?: number;
 }
 
-export default interface IamportResponse extends IamportAdditionalResponse {
+export interface RequestPayResponse extends RequestPayAdditionalResponse {
   success: boolean;
   error_code?: string;
   error_msg?: string;
@@ -24,4 +24,4 @@ export default interface IamportResponse extends IamportAdditionalResponse {
   buyer_addr?: string;
 }
 
-export type IamportResponseCallback = (response: IamportResponse) => void;
+export type RequestPayResponseCallback = (response: RequestPayResponse) => void;

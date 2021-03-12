@@ -44,20 +44,20 @@ const { IMP } = window;
 `Window` 인터페이스를 확장하기 때문에, 기존처럼 위와 같이 바로 사용할 수 있답니다! 😋
 
 ```tsx
-import { IamportParams, IamportResponse } from 'iamport-typings';
+import { RequestPayParams, RequestPayResponse } from 'iamport-typings';
 
 const onClickPayment = () => {
   const { IMP } = window;
   IMP.init('your_imp_uid');
 
-  const params: IamportParams = {
+  const params: RequestPayParams = {
     ...
   };
 
   IMP.request_pay(params, onPaymentAccepted);
 };
 
-const onPaymentAccepted = (response: IamportResponse) => {
+const onPaymentAccepted = (response: RequestPayResponse) => {
   const { imp_uid, merchant_uid } = response;
   console.log(imp_uid, merchant_uid);
 };
@@ -68,9 +68,9 @@ const onPaymentAccepted = (response: IamportResponse) => {
 | 인터페이스 이름 | 설명 |
 | ----------- | --- |
 | `Iamport` | 아임포트 객체 |
-| `IamportParams` | `request_pay` 메소드를 위한 결제 승인에 필요한 정보를 담고 있는 객체로, `IamportAdditionalParams`에서 확장됨 |
-| `IamportAdditionalParams` | `request_pay` 메소드를 위한 추가 속성 |
-| `IamportDisplay` | `IamportParams`에 선택적으로 포함되는, 구매자에게 제공되는 결제창 화면에 대한 UI 옵션 |
-| `IamportResponse` | 결제 결과의 정보를 담고 있는 객체로, `request_pay` 메소드에 지정되는 콜백 함수의 인자로, `IamportAdditionalResponse`에서 확장됨 |
-| `IamportAdditionalResponse` | `request_pay` 메소드의 콜백을 위한 추가 속성 |
-| `IamportResponseCallback` | `request_pay` 메소드의 함수 타입 리터럴 |
+| `RequestPayParams` | `request_pay` 메소드를 위한 결제 승인에 필요한 정보를 담고 있는 객체로, `RequestPayAdditionalParams`에서 확장됨 |
+| `RequestPayAdditionalParams` | `request_pay` 메소드를 위한 추가 속성 |
+| `Display` | `RequestPayParams`에 선택적으로 포함되는, 구매자에게 제공되는 결제창 화면에 대한 UI 옵션 |
+| `RequestPayResponse` | 결제 결과의 정보를 담고 있는 객체로, `request_pay` 메소드에 지정되는 콜백 함수의 인자로, `RequestPayAdditionalResponse`에서 확장됨 |
+| `RequestPayAdditionalResponse` | `request_pay` 메소드의 콜백을 위한 추가 속성 |
+| `RequestPayResponseCallback` | `request_pay` 메소드의 함수 타입 리터럴 |

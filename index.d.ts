@@ -1,24 +1,26 @@
-import IamportParams, {
-  IamportAdditionalParams,
-  IamportDisplay,
-} from './IamportParams';
-import IamportResponse, {
-  IamportAdditionalResponse,
-  IamportResponseCallback,
-} from './IamportResponse';
+import {
+  RequestPayParams,
+  RequestPayAdditionalParams,
+  Display,
+} from './RequestPayParams';
+import {
+  RequestPayResponse,
+  RequestPayAdditionalResponse,
+  RequestPayResponseCallback,
+} from './RequestPayResponse';
 
 export default interface Iamport {
   init: (accountID: string) => void;
-  request_pay: (params: IamportParams, callback?: IamportResponseCallback) => void;
+  request_pay: (params: RequestPayParams, callback?: RequestPayResponseCallback) => void;
 }
 
 export {
-  IamportParams,
-  IamportAdditionalParams,
-  IamportDisplay,
-  IamportResponse,
-  IamportAdditionalResponse,
-  IamportResponseCallback,
+  RequestPayParams,
+  RequestPayAdditionalParams,
+  Display,
+  RequestPayResponse,
+  RequestPayAdditionalResponse,
+  RequestPayResponseCallback,
 };
 
 declare global {

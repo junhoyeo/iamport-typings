@@ -1,4 +1,4 @@
-export interface IamportAdditionalParams {
+export interface RequestPayAdditionalParams {
   digital?: boolean;
   vbank_due?: string;
   m_redirect_url?: string;
@@ -6,11 +6,11 @@ export interface IamportAdditionalParams {
   biz_num?: string;
 }
 
-export interface IamportDisplay {
+export interface Display {
   card_quota?: number[];
 }
 
-export default interface IamportParams extends IamportAdditionalParams {
+export interface RequestPayParams extends RequestPayAdditionalParams {
   pg?: string;
   pay_method?: string;
   escrow?: boolean;
@@ -28,5 +28,5 @@ export default interface IamportParams extends IamportAdditionalParams {
   buyer_addr?: string;
   buyer_postcode?: string;
   notice_url?: string | string[];
-  display?: IamportDisplay;
+  display?: Display;
 }
