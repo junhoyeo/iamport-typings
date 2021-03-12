@@ -54,7 +54,7 @@ const onClickPayment = () => {
     ...
   };
 
-  IMP.request_pay(data, onPaymentAccepted);
+  IMP.request_pay(params, onPaymentAccepted);
 };
 
 const onPaymentAccepted = (response: IamportResponse) => {
