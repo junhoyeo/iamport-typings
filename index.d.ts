@@ -11,7 +11,10 @@ import {
 
 export default interface Iamport {
   init: (accountID: string) => void;
-  request_pay: (params: RequestPayParams, callback?: RequestPayResponseCallback) => void;
+  request_pay: (
+    params: RequestPayParams,
+    callback?: RequestPayResponseCallback,
+  ) => void;
 }
 
 export {

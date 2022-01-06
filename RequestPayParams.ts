@@ -1,4 +1,4 @@
-import { RequestPayNaverAdditionalParams } from "./RequestPayNaverParams"
+import { RequestPayNaverAdditionalParams } from './RequestPayNaverParams';
 
 export interface RequestPayAdditionalParams {
   digital?: boolean;
@@ -33,4 +33,5 @@ export interface RequestPayParams extends RequestPayAdditionalParams {
   display?: Display;
 }
 
-export type RequestPayNaverParams = RequestPayParams & RequestPayNaverAdditionalParams
+export type RequestPayNaverParams = RequestPayParams &
+  RequestPayNaverAdditionalParams;
