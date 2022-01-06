@@ -15,7 +15,8 @@
   },
   "files": [
     "index.d.ts",
-    "IamportParams.ts",
-    "IamportResponse.ts"
+    "RequestPayParams.ts",
+    "RequestPayResponse.ts",
+    "RequestPayNaverParams.ts"
   ]
 }
