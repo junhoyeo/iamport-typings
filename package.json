@@ -6,5 +6,13 @@
   "types": "index.d.js",
   "repository": "https://github.com/junhoyeo/iamport-typings",
   "author": "JunhoYeo <hanaro0704@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "files": [
+    "README.md",
+    "tsconfig.json",
+    "index.d.ts",
+    "RequestPayNaverParams.ts",
+    "RequestPayParams.ts",
+    "RequestPayResponse.ts"
+  ]
 }
