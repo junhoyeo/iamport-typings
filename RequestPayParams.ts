@@ -1,3 +1,5 @@
+import { RequestPayNaverAdditionalParams } from "./RequestPayNaverParams"
+
 export interface RequestPayAdditionalParams {
   digital?: boolean;
   vbank_due?: string;
@@ -30,3 +32,5 @@ export interface RequestPayParams extends RequestPayAdditionalParams {
   notice_url?: string | string[];
   display?: Display;
 }
+
+export type RequestPayNaverParams = RequestPayParams & RequestPayNaverAdditionalParams
