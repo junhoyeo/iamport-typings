@@ -1,5 +1,19 @@
-# Iamport Typings
-> 💳✨📘 국내 PG 결제연동 서비스, [아임포트](https://www.iamport.kr/)를 위한 타입스크립트 타입 선언을 제공합니다.
+<h1>
+💳✨📘 <br />
+Iamport Typings
+</h1>
+
+> 국내 PG 결제연동 서비스, [아임포트](https://www.iamport.kr/)를 위한 타입스크립트 타입 선언을 제공합니다.
+
+## ⚔️ 사용하는 곳
+
+<p align="center">
+  <a href="https://pocketlesson.com">
+      <picture>
+         <img src="https://user-images.githubusercontent.com/7247848/148687957-9102924d-5282-4526-a8c6-baddd9f26c39.png" align="center" height="50" alt="PocketLesson" hspace="16">
+      </picture>
+   </a>
+</p>
 
 ## 📦 설치
 
