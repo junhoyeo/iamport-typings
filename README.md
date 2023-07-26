@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="credit-card" src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/credit-card_1f4b3.png" width="128px" /><img alt="blue-book" src="https://emojipedia-us.s3.amazonaws.com/source/microsoft-teams/337/man-mage_1f9d9-200d-2642-fe0f.png" width="128px" /> <br />
+  <img alt="credit-card" src="https://em-content.zobj.net/source/microsoft-teams/363/credit-card_1f4b3.png" width="128px" /><img alt="man-mage" src="https://em-content.zobj.net/source/microsoft-teams/363/man-mage_1f9d9-200d-2642-fe0f.png" width="128px" /> <br />
   Iamport Typings
 </h1>
 
