@@ -1,3 +1,5 @@
+import { PaymentMethod } from './PaymentMethod';
+import { Pg } from './Pg';
 import { RequestPayNaverAdditionalParams } from './RequestPayNaverParams';
 
 export interface RequestPayAdditionalParams {
@@ -13,8 +15,8 @@ export interface Display {
 }
 
 export interface RequestPayParams extends RequestPayAdditionalParams {
-  pg?: string;
-  pay_method?: string;
+  pg?: Pg;
+  pay_method?: PaymentMethod;
   escrow?: boolean;
   customer_uid?: string;
   merchant_uid: string;

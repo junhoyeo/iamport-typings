@@ -1,3 +1,6 @@
+import { PaymentMethod } from './PaymentMethod';
+import { Pg } from './Pg';
+
 export interface RequestPayAdditionalResponse {
   apply_num?: string;
   vbank_num?: string;
@@ -12,11 +15,11 @@ export interface RequestPayResponse extends RequestPayAdditionalResponse {
   error_msg?: string;
   imp_uid: string | null;
   merchant_uid: string;
-  pay_method?: string;
+  pay_method?: PaymentMethod;
   paid_amount?: number;
   status?: string;
   name?: string;
-  pg_provider?: string;
+  pg_provider?: Pg;
   pg_tid?: string;
   buyer_name?: string;
   buyer_email?: string;
