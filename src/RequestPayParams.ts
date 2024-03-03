@@ -18,7 +18,12 @@ export type Currency = 'KRW' | 'USD' | 'EUR' | 'JPY';
 export type Language = 'en' | 'ko' | 'zh';
 
 export interface RequestPayParams extends RequestPayAdditionalParams {
-  pg?: Pg;
+  /**
+   * `pg`
+   * - `PG사코드` 및 `PG사코드.{상점ID}` 형태로 지정할 수 있습니다.
+   */
+  pg?: Pg | `${Pg}.${string}`;
+
   pay_method?: PaymentMethod;
   escrow?: boolean;
 
