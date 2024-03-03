@@ -11,5 +11,8 @@
     "README.md",
     "tsconfig.json",
     "src"
-  ]
+  ],
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  }
 }
