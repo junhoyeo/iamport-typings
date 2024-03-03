@@ -5,10 +5,11 @@ const parseItems = (haystack) => {
     }
     const firstQuoteIndex = line.indexOf('(');
     const key = line.substring(0, firstQuoteIndex).trim();
-    const value = line
-      .substring(firstQuoteIndex + 1)
-      .replace(')', '')
-      .trim();
+
+    let value = line.substring(firstQuoteIndex + 1).trim();
+    if (value.endsWith(')')) {
+      value = value.substring(0, value.length - 1);
+    }
     return { key, value };
   });
 

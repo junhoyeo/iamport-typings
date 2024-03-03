@@ -19,7 +19,7 @@ export type PaymentMethod =
   | 'phone' // 휴대폰소액결제
   | 'pinpay' // 핀페이
   | 'point' // 베네피아 포인트 등 포인트 결제
-  | 'samsung' // Deprecated
+  | 'samsung' // 삼성페이 (Deprecated)
   | 'samsungpay' // 삼성페이
   | 'skpay' // 11Pay (구.SKPay)
   | 'smartculture' // 스마트문상
@@ -33,4 +33,4 @@ export type PaymentMethod =
   | 'trans' // 실시간계좌이체
   | 'unionpay' // 유니온페이
   | 'vbank' // 가상계좌
-  | 'wechat'; // 위쳇페이;
+  | 'wechat'; // 위쳇페이

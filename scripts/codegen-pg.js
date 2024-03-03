@@ -53,7 +53,8 @@ const main = async () => {
     export type Pg =
     | ${parseItems(LATEST_PORTONE)
       .map((item) => `'${item.key}' // ${item.value}`)
-      .join('\n| ')};
+      .join('\n| ')}
+    ;
   `,
     { parser: 'typescript', ...options },
   );

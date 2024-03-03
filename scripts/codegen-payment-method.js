@@ -67,20 +67,19 @@ const OLD_IAMPORT = `
 | 'tenpay' // 텐페이
 `;
 
-const OLD_KEYS = OLD_IAMPORT.split('\n').flatMap((line) => {
+const OLD_ITEMS = OLD_IAMPORT.split('\n').flatMap((line) => {
   if (!line) {
     return [];
   }
-  // return line.split('//')[0].trim();
-  line = line.replace("| '", '');
-  line = line.split("' //")[0];
-  return line.trim();
+  const key = line.replace("| '", '').split("' //")[0].trim();
+  const value = line.split('//')[1].trim();
+  return { key, value };
 });
 
 const items = parseItems(LATEST_PORTONE);
-for (const oldKey of OLD_KEYS) {
-  if (!items.find((item) => item.key === oldKey)) {
-    items.push({ key: oldKey, value: 'Deprecated' });
+for (const old of OLD_ITEMS) {
+  if (!items.find((item) => item.key === old.key)) {
+    items.push({ key: old.key, value: `${old.value} (Deprecated)` });
   }
 }
 items.sort((a, b) => a.key.localeCompare(b.key));
@@ -101,7 +100,8 @@ const main = async () => {
         }
         return `'${item.key}'`;
       })
-      .join('\n| ')};
+      .join('\n| ')}
+    ;
   `,
     { parser: 'typescript', ...options },
   );

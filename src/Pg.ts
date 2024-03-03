@@ -19,19 +19,19 @@ export type Pg =
   | 'naverco' // 네이버페이-주문형
   | 'naverpay' // 네이버페이-결제형
   | 'nice' // 나이스페이
-  | 'nice_v2' // (신나이스페이)
+  | 'nice_v2' // (신)나이스페이
   | 'payco' // 페이코
   | 'paymentwall' // 페이먼트월
   | 'paypal' // 페이팔
-  | 'paypal_v2' // (신페이팔)
+  | 'paypal_v2' // (신)페이팔
   | 'settle' // 세틀뱅크
   | 'smartro' // 스마트로
-  | 'smartro_v2' // (신스마트로)
+  | 'smartro_v2' // (신)스마트로
   | 'smilepay' // 스마일페이
   | 'syrup' // 시럽페이
   | 'toss_brandpay' // 토스페이먼츠 브랜드페이
   | 'tosspay' // 토스페이
-  | 'tosspay_v2' // (신토스페이)
-  | 'tosspayments' // (신토스페이먼츠)
+  | 'tosspay_v2' // (신)토스페이
+  | 'tosspayments' // (신)토스페이먼츠
   | 'uplus' // 토스페이먼츠(구 LG U+)
-  | 'welcome'; // 웰컴페이먼츠;
+  | 'welcome'; // 웰컴페이먼츠
