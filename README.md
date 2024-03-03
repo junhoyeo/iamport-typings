@@ -120,11 +120,13 @@ const onPaymentAccepted = (response: RequestPayResponse) => {
 
 | 타입 이름 | 설명 |
 | ----------- | --- |
-| `EscrowProduct` | |
-| `PayPalSupportedCurrency` | [PayPal 지원 결제통화](https://developer.paypal.com/docs/reports/reference/paypal-supported-currencies/) |
+| [`Pg`](https://github.com/junhoyeo/iamport-typings/blob/main/src/Pg.ts) | |
+| [`PaymentMethod`](https://github.com/junhoyeo/iamport-typings/blob/main/src/PaymentMethod.ts) | |
+| [`PayPalSupportedCurrency`](https://github.com/junhoyeo/iamport-typings/blob/main/src/paypal/PayPalSupportedCurrency.ts) | [PayPal 지원 결제통화](https://developer.paypal.com/docs/reports/reference/paypal-supported-currencies/)의 유니언 타입(union type) |
 | `Currency` | 결제통화 구분코드 (`'KRW' \| 'USD' \| 'EUR' \| 'JPY' \| PayPalSupportedCurrency`) |
+| [`CardCode`](https://github.com/junhoyeo/iamport-typings/blob/main/src/card/CardCode.ts) | [카드사 금융결제원 표준 코드](https://chaifinance.notion.site/53589280bbc94fab938d93257d452216?v=eb405baf52134b3f90d438e3bf763630)의 유니언 타입(union type) |
 | `Language` | `'en' \| 'ko' \| 'zh'` |
-| `CardCode` | [카드사 금융결제원 표준 코드](https://chaifinance.notion.site/53589280bbc94fab938d93257d452216?v=eb405baf52134b3f90d438e3bf763630) |
+| `EscrowProduct` | |
 
 | 타입 이름 | 설명 |
 | ----------- | --- |
