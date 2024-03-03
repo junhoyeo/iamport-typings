@@ -1,6 +1,7 @@
 import { PaymentMethod } from './PaymentMethod';
 import { Pg } from './Pg';
 import { RequestPayNaverAdditionalParams } from './RequestPayNaverParams';
+import { CardCode } from './card/CardCode';
 import { PayPalSupportedCurrency } from './paypal/PayPalSupportedCurrency';
 
 export interface RequestPayAdditionalParams {
@@ -21,10 +22,6 @@ export interface RequestPayAdditionalParams {
   m_redirect_url?: string;
   app_scheme?: string;
   biz_num?: string;
-}
-
-export interface Display {
-  card_quota?: number[];
 }
 
 export type EscrowProduct = {
@@ -89,7 +86,29 @@ export interface RequestPayParams extends RequestPayAdditionalParams {
 
   confirm_url?: string;
   notice_url?: string | string[];
-  display?: Display;
+
+  display?: {
+    /**
+     * `display.card_quota`: 지원 할부개월 수
+     * - 할부결제는 5만원 이상 결제 요청시에만 이용 가능합니다.
+     * @example
+     * []: 일시불만 결제 가능
+     * @example
+     * [2, 3, 4, 5, 6]: 일시불을 포함한 2, 3, 4, 5, 6 개월까지 할부개월 선택 가능
+     */
+    card_quota?: number[];
+  };
+
+  card?: {
+    direct?: {
+      code: CardCode;
+      quota: number;
+    };
+    detail?: {
+      card_code: CardCode;
+      enabled: boolean;
+    }[];
+  };
 }
 
 export type RequestPayNaverParams = RequestPayParams &

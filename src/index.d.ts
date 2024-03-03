@@ -1,7 +1,6 @@
 import {
   RequestPayParams,
   RequestPayAdditionalParams,
-  Display,
 } from './RequestPayParams';
 import {
   RequestPayResponse,
@@ -20,7 +19,6 @@ export default interface Iamport {
 export {
   RequestPayParams,
   RequestPayAdditionalParams,
-  Display,
   RequestPayResponse,
   RequestPayAdditionalResponse,
   RequestPayResponseCallback,
