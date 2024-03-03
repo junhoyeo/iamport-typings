@@ -1,6 +1,6 @@
 import { PaymentMethod } from './PaymentMethod';
 import { Pg } from './Pg';
-import { RequestPayNaverAdditionalParams } from './RequestPayNaverParams';
+import { RequestPayNaverAdditionalParams } from './naver/RequestPayNaverParams';
 import { CardCode } from './card/CardCode';
 import { PayPalSupportedCurrency } from './paypal/PayPalSupportedCurrency';
 
