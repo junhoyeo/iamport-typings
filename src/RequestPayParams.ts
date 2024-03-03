@@ -1,10 +1,23 @@
 import { PaymentMethod } from './PaymentMethod';
 import { Pg } from './Pg';
 import { RequestPayNaverAdditionalParams } from './RequestPayNaverParams';
+import { PayPalSupportedCurrency } from './paypal/PayPalSupportedCurrency';
 
 export interface RequestPayAdditionalParams {
   digital?: boolean;
+
+  /**
+   * `vbank_due`: 가상계좌 입금기한
+   * - 결제수단이 가상계좌인 경우 입금기한을 설정할 수 있습니다.
+   * - 다음과 같은 형식으로 설정이 가능합니다:
+   * @example
+   * - `YYYY-MM-DD`
+   * - `YYYYMMDD`
+   * - `YYYY-MM-DD HH:mm:ss`
+   * - `YYYYMMDDHHmmss`
+   */
   vbank_due?: string;
+
   m_redirect_url?: string;
   app_scheme?: string;
   biz_num?: string;
@@ -14,7 +27,16 @@ export interface Display {
   card_quota?: number[];
 }
 
-export type Currency = 'KRW' | 'USD' | 'EUR' | 'JPY';
+export type EscrowProduct = {
+  id: string;
+  name: string;
+  code: string;
+  unitPrice: number;
+  quantity: number;
+};
+
+export type Currency = 'KRW' | 'USD' | 'EUR' | 'JPY' | PayPalSupportedCurrency;
+
 export type Language = 'en' | 'ko' | 'zh';
 
 export interface RequestPayParams extends RequestPayAdditionalParams {
@@ -29,17 +51,11 @@ export interface RequestPayParams extends RequestPayAdditionalParams {
 
   /**
    * `escrowProducts`: 에스크로 결제 정보
-   * 에스크로 결제(escrow: true)시에만 유효하고, 필수 값은 아닙니다.
-   * 토스페이먼츠 신모듈 (pg: tosspayments.~)시에만 유효합니다.
-   * 1개의 주문 건에 여러 상품이 결제될 때 상품에 따라 배송이 다르게 이루어지는 경우, 1개의 주문에 여러 배송 정보를 넣기 위해 필요합니다.
+   * - 에스크로 결제(`escrow: true`)시에만 유효하고, 필수 값은 아닙니다.
+   * - 토스페이먼츠 신모듈 (pg: `tosspayments.~`)시에만 유효합니다.
+   * - 1개의 주문 건에 여러 상품이 결제될 때 상품에 따라 배송이 다르게 이루어지는 경우, 1개의 주문에 여러 배송 정보를 넣기 위해 필요합니다.
    */
-  escrowProducts?: {
-    id: string;
-    name: string;
-    code: string;
-    unitPrice: number;
-    quantity: number;
-  }[];
+  escrowProducts?: EscrowProduct[];
 
   customer_uid?: string;
   merchant_uid: string;
@@ -49,14 +65,16 @@ export interface RequestPayParams extends RequestPayAdditionalParams {
   tax_free?: number;
 
   /**
+   * `vat` (`number`)
    * @deprecated `vat` 대신 `vat_amount` 를 사용해 주세요.
    */
   vat?: number;
 
   /**
-   * `vat_amount` (number | null): 부가세
-   * 결제 금액 중 부가세(기본값: null)
-   * 지원되는 PG사: 나이스페이먼츠, (신) 토스페이
+   * `vat_amount` (`number | null`)
+   * - 결제 금액 중 부가세
+   * - 지원되는 PG사: 나이스페이먼츠, (신) 토스페이
+   * @default null
    */
   vat_amount?: number | null;
 
