@@ -15,7 +15,7 @@
   </a>
 </p>
 
-> 국내 PG 결제연동 서비스, [아임포트](https://www.iamport.kr/)를 위한 타입스크립트 타입 선언을 제공합니다.
+> 국내 PG 결제연동 서비스, [포트원(구 아임포트)](https://portone.io)를 위한 타입스크립트 타입 선언을 제공합니다.
 
 ## ⚔️ 사용하는 곳
 
@@ -67,6 +67,16 @@ const { IMP } = window;
 `Window` 인터페이스를 확장하기 때문에, 기존처럼 위와 같이 바로 사용할 수 있답니다! 😋
 
 ```tsx
+import Iamport from 'iamport-typings';
+
+declare global {
+  interface Window {
+    IMP?: Iamport;
+  }
+}
+```
+
+```tsx
 import { RequestPayParams, RequestPayResponse } from 'iamport-typings';
 
 const onClickPayment = () => {
@@ -88,12 +98,45 @@ const onPaymentAccepted = (response: RequestPayResponse) => {
 
 위와 같이 각각의 인터페이스를 가져와 사용하는 것도 가능합니다.
 
-| 인터페이스 이름                | 설명                                                                                                                               |
-| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `Iamport`                      | 아임포트 객체                                                                                                                      |
-| `RequestPayParams`             | `request_pay` 메소드를 위한 결제 승인에 필요한 정보를 담고 있는 객체로, `RequestPayAdditionalParams`에서 확장됨                    |
-| `RequestPayAdditionalParams`   | `request_pay` 메소드를 위한 추가 속성                                                                                              |
-| `Display`                      | `RequestPayParams`에 선택적으로 포함되는, 구매자에게 제공되는 결제창 화면에 대한 UI 옵션                                           |
-| `RequestPayResponse`           | 결제 결과의 정보를 담고 있는 객체로, `request_pay` 메소드에 지정되는 콜백 함수의 인자로, `RequestPayAdditionalResponse`에서 확장됨 |
-| `RequestPayAdditionalResponse` | `request_pay` 메소드의 콜백을 위한 추가 속성                                                                                       |
-| `RequestPayResponseCallback`   | `request_pay` 메소드의 함수 타입 리터럴                                                                                            |
+### 아임포트 객체
+
+| 인터페이스 이름 | 설명 |
+| ----------- | --- |
+| `Iamport` | 아임포트 객체 |
+
+### [결제요청 파라미터](https://developers.portone.io/docs/ko/sdk/javascript-sdk/payrq?v=v1)
+
+| 인터페이스 이름 | 설명 |
+| ----------- | --- |
+| `RequestPayParams` | `request_pay` 메소드를 위한 결제 승인에 필요한 정보를 담고 있는 객체로, `RequestPayAdditionalParams`에서 확장됨 |
+| `RequestPayAdditionalParams` | `request_pay` 메소드를 위한 추가 속성 |
+
+| 인터페이스 이름 | 설명 |
+| ----------- | --- |
+| `RequestPayNaverAdditionalParams` | [네이버페이 연동 시 `RequestPayParams` 에 추가되는 파라미터](https://github.com/iamport/iamport-manual/blob/master/NAVERPAY/sample/naverpay-pg.md) |
+| `RequestPayNaverParams` | `RequestPayParams & RequestPayNaverAdditionalParams` |
+
+#### 기타
+
+| 타입 이름 | 설명 |
+| ----------- | --- |
+| `EscrowProduct` | |
+| `PayPalSupportedCurrency` | [PayPal 지원 결제통화](https://developer.paypal.com/docs/reports/reference/paypal-supported-currencies/) |
+| `Currency` | 결제통화 구분코드 (`'KRW' \| 'USD' \| 'EUR' \| 'JPY' \| PayPalSupportedCurrency`) |
+| `Language` | `'en' \| 'ko' \| 'zh'` |
+| `CardCode` | [카드사 금융결제원 표준 코드](https://chaifinance.notion.site/53589280bbc94fab938d93257d452216?v=eb405baf52134b3f90d438e3bf763630) |
+
+| 타입 이름 | 설명 |
+| ----------- | --- |
+| `NaverProductCategoryType` | |
+| `NaverProductCategoryId` | |
+| `NaverPayReferrer` | |
+| `NaverProduct` | [네이버페이 상품 정보](https://github.com/iamport/iamport-manual/blob/master/NAVERPAY/sample/naverpay-pg.md#naverproducts-%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0) |
+
+### [결제응답 파라미터](https://developers.portone.io/docs/ko/sdk/javascript-sdk/payrt?v=v1)
+
+| 인터페이스 이름 | 설명 |
+| ----------- | --- |
+| `RequestPayResponse` | 결제 결과의 정보를 담고 있는 객체로, `request_pay` 메소드에 지정되는 콜백 함수의 인자로, `RequestPayAdditionalResponse`에서 확장됨 |
+| `RequestPayAdditionalResponse` | `request_pay` 메소드의 콜백을 위한 추가 속성 |
+| `RequestPayResponseCallback` | `request_pay` 메소드의 함수 타입 리터럴 |

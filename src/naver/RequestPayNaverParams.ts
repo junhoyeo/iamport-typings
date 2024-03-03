@@ -118,7 +118,7 @@ export interface NaverProduct {
 }
 
 /**
- * {@link RequestPayParams}에 추가되는 네이버페이 고유 값
+ * {@link RequestPayParams}에 추가되는 네이버페이 관련 파라미터
  * @see https://github.com/iamport/iamport-manual/blob/master/NAVERPAY/sample/naverpay-pg.md
  */
 export interface RequestPayNaverAdditionalParams {

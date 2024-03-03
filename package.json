@@ -1,18 +1,19 @@
 {
   "name": "iamport-typings",
   "version": "1.3.1",
-  "description": "TypeScript type definitions for iamport",
-  "main": "index.d.js",
-  "types": "index.d.js",
+  "description": "TypeScript type definitions for PortOne (formerly Iamport)",
+  "main": "src/index.d.js",
+  "types": "src/index.d.js",
   "repository": "https://github.com/junhoyeo/iamport-typings",
-  "author": "JunhoYeo <hanaro0704@gmail.com>",
+  "author": "Junho Yeo <i@junho.io>",
   "license": "MIT",
   "files": [
     "README.md",
     "tsconfig.json",
-    "index.d.ts",
-    "RequestPayNaverParams.ts",
-    "RequestPayParams.ts",
-    "RequestPayResponse.ts"
-  ]
+    "src"
+  ],
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  }
 }
