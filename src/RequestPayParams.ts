@@ -14,6 +14,9 @@ export interface Display {
   card_quota?: number[];
 }
 
+export type Currency = 'KRW' | 'USD' | 'EUR' | 'JPY';
+export type Language = 'en' | 'ko' | 'zh';
+
 export interface RequestPayParams extends RequestPayAdditionalParams {
   pg?: Pg;
   pay_method?: PaymentMethod;
@@ -51,8 +54,10 @@ export interface RequestPayParams extends RequestPayAdditionalParams {
    * 지원되는 PG사: 나이스페이먼츠, (신) 토스페이
    */
   vat_amount?: number | null;
-  currency?: string;
-  language?: string;
+
+  currency?: Currency;
+  language?: Language;
+
   buyer_email?: string;
   buyer_name?: string;
   buyer_tel: string;
