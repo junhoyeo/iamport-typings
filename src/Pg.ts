@@ -31,7 +31,7 @@ export type Pg =
   | 'syrup' // 시럽페이
   | 'toss_brandpay' // 토스페이먼츠 브랜드페이
   | 'tosspay' // 토스페이
-  | 'tosspay_v2 ' // (신토스페이)
+  | 'tosspay_v2' // (신토스페이)
   | 'tosspayments' // (신토스페이먼츠)
   | 'uplus' // 토스페이먼츠(구 LG U+)
   | 'welcome'; // 웰컴페이먼츠;

@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const prettier = require('prettier');
+const { parseItems } = require('./utils/parse-items');
 
 // https://developers.portone.io/docs/ko/sdk/javascript-sdk/payrq?v=v1#%EA%B2%B0%EC%A0%9C%EC%9A%94%EC%B2%AD-%ED%8C%8C%EB%9D%BC%EB%AF%B8%ED%84%B0-%EC%A0%95%EC%9D%98
 const LATEST_PORTONE = `
@@ -41,18 +42,6 @@ settle(세틀뱅크)
 welcome(웰컴페이먼츠)
 `;
 
-const items = LATEST_PORTONE.split('\n').flatMap((line) => {
-  if (!line) {
-    return [];
-  }
-  const firstQuoteIndex = line.indexOf('(');
-  const key = line.substring(0, firstQuoteIndex);
-  const value = line.substring(firstQuoteIndex + 1);
-  return { key, value: value.replace(')', '') };
-});
-
-items.sort((a, b) => a.key.localeCompare(b.key));
-
 const main = async () => {
   const options = await prettier.resolveConfig(
     path.resolve(__dirname, '../.prettierrc.js'),
@@ -62,7 +51,9 @@ const main = async () => {
     `
     /** @see https://developers.portone.io/docs/ko/sdk/javascript-sdk/payrq */
     export type Pg =
-    | ${items.map((item) => `'${item.key}' // ${item.value}`).join('\n| ')};
+    | ${parseItems(LATEST_PORTONE)
+      .map((item) => `'${item.key}' // ${item.value}`)
+      .join('\n| ')};
   `,
     { parser: 'typescript', ...options },
   );
