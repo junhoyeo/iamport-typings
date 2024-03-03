@@ -10,16 +10,22 @@ export interface RequestPayAdditionalResponse {
 }
 
 export interface RequestPayResponse extends RequestPayAdditionalResponse {
-  success: boolean;
+  success?: boolean;
+  imp_success?: boolean;
+
   error_code?: string;
   error_msg?: string;
+
   imp_uid: string | null;
   merchant_uid: string;
   pay_method?: PaymentMethod;
   paid_amount?: number;
-  status?: string;
+
+  status?: 'ready' | 'paid' | 'failed';
+
   name?: string;
   pg_provider?: Pg;
+
   pg_tid?: string;
   buyer_name?: string;
   buyer_email?: string;
