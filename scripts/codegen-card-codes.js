@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const prettier = require('prettier');
 
+// https://chaifinance.notion.site/53589280bbc94fab938d93257d452216?v=eb405baf52134b3f90d438e3bf763630
 const 카드사_금융결제원_표준_코드 = `카드,코드,이니시스,KCP,토스페이먼츠,나이스페이먼츠,KICC,다날,페이조아(키움페이),(신)스마트로
 광주카드,364,O,O,O,O,,O,O,O
 비씨카드,361,O,O,O,O,O,O,O,O
