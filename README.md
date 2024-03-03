@@ -118,13 +118,15 @@ const onPaymentAccepted = (response: RequestPayResponse) => {
 
 #### 기타
 
-| 타입 이름 | 설명 |
-| ----------- | --- |
-| `EscrowProduct` | |
-| `PayPalSupportedCurrency` | [PayPal 지원 결제통화](https://developer.paypal.com/docs/reports/reference/paypal-supported-currencies/) |
-| `Currency` | 결제통화 구분코드 (`'KRW' \| 'USD' \| 'EUR' \| 'JPY' \| PayPalSupportedCurrency`) |
-| `Language` | `'en' \| 'ko' \| 'zh'` |
-| `CardCode` | [카드사 금융결제원 표준 코드](https://chaifinance.notion.site/53589280bbc94fab938d93257d452216?v=eb405baf52134b3f90d438e3bf763630) |
+| 타입 이름 | 설명 | Codegen |
+| ------- | --- | ------- |
+| [`Pg`](https://github.com/junhoyeo/iamport-typings/blob/main/src/Pg.ts) | | [Codegen](https://github.com/junhoyeo/iamport-typings/blob/main/scripts/codegen-pg.js) |
+| [`PaymentMethod`](https://github.com/junhoyeo/iamport-typings/blob/main/src/PaymentMethod.ts) | | [Codegen](https://github.com/junhoyeo/iamport-typings/blob/main/scripts/codegen-payment-method.js) |
+| [`PayPalSupportedCurrency`](https://github.com/junhoyeo/iamport-typings/blob/main/src/paypal/PayPalSupportedCurrency.ts) | [PayPal 지원 결제통화](https://developer.paypal.com/docs/reports/reference/paypal-supported-currencies/)의 유니언 타입(union type) | [Codegen](https://github.com/junhoyeo/iamport-typings/blob/main/scripts/codegen-paypal.js) |
+| `Currency` | 결제통화 구분코드 (`'KRW' \| 'USD' \| 'EUR' \| 'JPY' \| PayPalSupportedCurrency`) | |
+| [`CardCode`](https://github.com/junhoyeo/iamport-typings/blob/main/src/card/CardCode.ts) | [카드사 금융결제원 표준 코드](https://chaifinance.notion.site/53589280bbc94fab938d93257d452216?v=eb405baf52134b3f90d438e3bf763630)의 유니언 타입(union type) | [Codegen](https://github.com/junhoyeo/iamport-typings/blob/main/scripts/codegen-card-codes.js) |
+| `Language` | `'en' \| 'ko' \| 'zh'` | |
+| `EscrowProduct` | | |
 
 | 타입 이름 | 설명 |
 | ----------- | --- |
