@@ -37,6 +37,8 @@ export type Currency = 'KRW' | 'USD' | 'EUR' | 'JPY' | PayPalSupportedCurrency;
 export type Language = 'en' | 'ko' | 'zh';
 
 export interface RequestPayParams extends RequestPayAdditionalParams {
+  channelKey?: string;
+  
   /**
    * `pg`
    * - `PG사코드` 및 `PG사코드.{상점ID}` 형태로 지정할 수 있습니다.
